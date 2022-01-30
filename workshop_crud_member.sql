@@ -34,7 +34,7 @@ CREATE TABLE `tbl_member` (
   `name` varchar(100) NOT NULL,
   `phone` varchar(10) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `date_save` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'เก็บวันเดือนปีที่เพิ่มในdb'
+  `date_save` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'เก็บวันเดือนปีที่เพิ่มในd'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
