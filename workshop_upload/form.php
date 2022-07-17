@@ -9,7 +9,7 @@
 //1. เชื่อมต่อ database: 
 include('condb.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 //2. query ข้อมูลจากตาราง: 
-$query = "SELECT * FROM uploadfile ORDER BY fileID asc" or die("Error:" . mysqli_error()); 
+$query = "SELECT * FROM uploadfile ORDER BY fileID asc" or die("Error:" . mysqli_error($con)); 
 //3. execute the query. 
 $result = mysqli_query($con, $query); 
 //4 . แสดงข้อมูลที่ query ออกมา: 
@@ -17,7 +17,7 @@ $result = mysqli_query($con, $query);
 //ใช้ตารางในการจัดข้อมูล
 echo "<table border='1' align='center' width='500'>";
 //หัวข้อตาราง
-echo "<tr align='center' bgcolor='#CCCCCC'><td>File ID</td><td>File</td><td>date_create</td></tr>";
+echo "<tr align='center' bgcolor='#'><td>File ID</td><td>File</td><td>date_create</td></tr>";
 while($row = mysqli_fetch_array($result)) { 
   echo "<tr>";
   echo "<td align='center'>" .$row["fileID"] .  "</td> "; 

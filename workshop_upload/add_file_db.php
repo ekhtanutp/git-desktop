@@ -31,7 +31,7 @@ $upload=$_FILES['fileupload'];
 		$sql = "INSERT INTO uploadfile (fileupload) 
 		VALUES('$newname')";
 		
-		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
+		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error($con));
 	
 	mysqli_close($con);
 	// javascript แสดงการ upload file
