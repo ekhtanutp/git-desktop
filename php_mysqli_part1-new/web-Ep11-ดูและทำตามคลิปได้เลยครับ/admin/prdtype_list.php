@@ -1,9 +1,9 @@
 <meta charset="UTF-8">
 <?php
 //1. เชื่อมต่อ database
-include('../condb.php');
+//include('../condb.php');
 //2. query ข้อมูลจากตาราง tb_member: 
-$query = "SELECT * FROM tbl_prd_type ORDER BY t_id asc" or die("Error:" . mysqli_error());
+$query = "SELECT * FROM tbl_prd_type ORDER BY t_id asc" or die("Error:" . mysqli_error($condb));
 
 // echo $query;
 // exit; 
@@ -16,7 +16,7 @@ echo "<table id='example' class='display table table-bordered table-hover' cells
 //หัวข้อตาราง
 echo "
 <thead>
-<tr align='center' class='danger'>
+<tr align='center' class='info'>
 <th width='5%'>รหัส</th>
 <th width='75%'>ประเภทสินค้า</th>
 <th width='10%'>แก้ไข</th>
@@ -30,11 +30,11 @@ while($row = mysqli_fetch_array($result)) {
   echo "<td>" .$row["t_name"] .  "</td> "; 
   //แก้ไขข้อมูล
   echo "<td>
-  <a href='prdtype.php?ID=$row[0]&act=edit' class='btn btn-warning btn-xs'>edit</a></td> ";
+  <a href='prdtype.php?ID=$row[0]&act=edit' class='btn btn-warning btn-xs'>Edit</a></td> ";
   
   //ลบข้อมูล
   echo "<td>
-  <a href='prdtype_del_db.php?ID=$row[0]' onclick=\"return confirm('ยืนยันการลบ?')\" class='btn btn-danger btn-xs'>-ลบ</a></td> ";
+  <a href='prdtype_del_db.php?ID=$row[0]' onclick=\"return confirm('ยืนยันการลบ?')\" class='btn btn-danger btn-xs'>Del</a></td> ";
   echo "</tr>";
 }
 echo "</table>";

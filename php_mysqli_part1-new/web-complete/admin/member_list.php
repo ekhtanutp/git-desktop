@@ -1,7 +1,7 @@
 <?php
 //1. เชื่อมต่อ database:
 //2. query ข้อมูลจากตาราง tb_member:
-$query = "SELECT * FROM tbl_member ORDER BY m_id DESC" or die("Error:" . mysqli_error());
+$query = "SELECT * FROM tbl_member ORDER BY m_id DESC" or die("Error:" . mysqli_error($condb));
 // echo $query;
 // exit;
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .

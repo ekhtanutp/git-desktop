@@ -9,9 +9,18 @@
       </div>
       <div class="col-md-10">
         <h4>::จัดการข้อมูลสมาชิก::
+          <a href="member.php?act=add" class="btn btn-primary"> +add member </a>
         </h4>
        <?php 
-        include('member_list.php');   
+
+       $act = (isset($_GET['act']) ? $_GET['act'] : '');
+
+       if($act=='add'){
+        include('member_form_add.php');
+       }else{
+        include("member_list.php");
+       }
+       
        ?>
       </div>
     </div>

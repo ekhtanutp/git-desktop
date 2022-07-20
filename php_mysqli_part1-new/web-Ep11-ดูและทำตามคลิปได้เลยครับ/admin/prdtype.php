@@ -12,7 +12,16 @@
           <a href="prdtype.php?act=add" class="btn btn-success"> +ADD </a>
         </h4>
        <?php 
+       $act = (isset($_GET['act']) ? $_GET['act'] : '');
+
+       if($act=='add'){
         include('prdtype_form_add.php');
+       }else{
+        include('prdtype_list.php');
+       }
+
+        //include('prdtype_list.php');
+        //include('prdtype_form_add.php');
        ?>
       </div>
     </div>
